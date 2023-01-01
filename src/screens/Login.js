@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   View,
   Text,
@@ -6,9 +7,22 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Alert,
 } from "react-native";
 
-export default function Login() {
+export default function Login({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    if (email === "support@corexlab.com" && password === "corexlab") {
+      Alert.alert("Login Successfully");
+      navigation.navigate("Home");
+    } else {
+      Alert.alert("Email and Password is not correct");
+    }
+  };
+
   return (
     <ScrollView>
       <View style={styles.MainContainer}>
@@ -27,6 +41,7 @@ export default function Login() {
             <TextInput
               autoCapitalize="none"
               autoCorrect={false}
+              onChangeText={(e) => setEmail(e)}
               style={styles.inputStyles}
               placeholder="E-mail ID"
             />
@@ -40,6 +55,7 @@ export default function Login() {
             <TextInput
               autoCapitalize="none"
               autoCorrect={false}
+              onChangeText={(e) => setPassword(e)}
               style={styles.inputStyles}
               secureTextEntry={true}
               placeholder="Password"
@@ -48,7 +64,10 @@ export default function Login() {
 
           <Text style={styles.forgotPass}>Forgot Password?</Text>
 
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity
+            style={styles.loginBtn}
+            onPress={() => handleLogin()}
+          >
             <Text style={styles.loginBtnText}>Login</Text>
           </TouchableOpacity>
         </View>

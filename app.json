@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "corexlab-react-native-assignment",
+    "name": "corexlab app",
     "slug": "corexlab-react-native-assignment",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptiveIcon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.indrajithgoswami.corexlabreactnativeassignment"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "db91e1f3-93f6-47bb-8bfc-0b53caf7d2be"
+      }
     }
   }
 }

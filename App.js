@@ -9,7 +9,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Home"
+        initialRouteName="Login"
         screenOptions={{ 
           headerShown: false
          }}
